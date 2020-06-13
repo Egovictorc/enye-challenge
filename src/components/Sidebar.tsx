@@ -1,11 +1,9 @@
 import React, {
   useState,
-  useEffect,
-  HtmlHTMLAttributes,
   FormEvent,
   ChangeEvent,
 } from "react";
-import { Layout, Col } from "antd";
+import { Col } from "antd";
 
 import styles from "../scss/sidebar.module.scss";
 

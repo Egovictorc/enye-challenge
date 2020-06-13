@@ -83,7 +83,7 @@ const Content = () => {
         <span role="img" aria-label="smiling face">
           😇
         </span>
-        &nbsp; Loading maps
+        &nbsp; Loading maps...
       </div>
     );
 
