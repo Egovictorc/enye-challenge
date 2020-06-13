@@ -10,3 +10,7 @@ export interface LatLng {
     time?: any
   }
   
+  export interface PanTo {
+   panTo(lat: number,
+    lng: number,): any 
+ }
