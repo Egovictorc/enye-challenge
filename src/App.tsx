@@ -18,7 +18,7 @@ const App: React.FC = () => {
       <Header />
       <Row>
         <Content />
-        <Sidebar />
+        {/* <Sidebar /> */}
       </Row>
       <Footer />
     </>

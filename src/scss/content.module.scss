@@ -1,4 +1,37 @@
 .mapContainer {
-    height: 800px;
-    background-color: red;
+  height: 800px;
+  position: relative;
+  // background-color: red;
+}
+
+.mapSearch {
+  margin: 0 auto 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mapError {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.locate {
+    position: absolute;
+    right: 3vw;
+    top: 20px;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.tentIcon {
+    background-color: #fff;
+    width: 100px;
+    height: auto;
+    display: inline-block;
 }

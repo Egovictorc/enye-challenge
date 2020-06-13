@@ -1,9 +1,25 @@
 .header {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
+    margin-bottom: 2rem;
     background-color: red;
 
     background-image: url("../images/adhy-savala-zbpgmGe27p8-unsplash.jpg");
     background-size: cover;
     background-origin: bottom;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.heading {
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #333;
 }
