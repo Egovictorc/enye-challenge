@@ -122,7 +122,7 @@ const Content = () => {
 };
 
 
-const Search: React.FC = () => {
+const Search: React.FC = (props) => {
 const {
   ready,
   value,
@@ -131,6 +131,7 @@ const {
 } = usePlacesAutocomplete();
 
 const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
+ 
   setValue(e.target.value);
 };
 

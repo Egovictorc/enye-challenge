@@ -9,7 +9,9 @@ const HeaderComponent: React.FC = () => {
   return (
     <header className={styles.header}>
       <Row>
-        <Col span="24">hello from header</Col>
+        <Col span="24">
+          <h2 className={styles.heading}> your health is our concern </h2>
+        </Col>
       </Row>
     </header>
   );

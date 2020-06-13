@@ -1,4 +1,17 @@
 .mapContainer {
-    height: 800px;
-    background-color: red;
+  height: 800px;
+  // background-color: red;
+}
+
+.mapSearch {
+  margin: 0 auto 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mapError {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
