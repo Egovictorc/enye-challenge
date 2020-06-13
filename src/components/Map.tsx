@@ -12,7 +12,9 @@ import "@reach/combobox/styles.css";
 
 
 import Search from "./MapSearch";
+import UserLocation from "./UserLocation";
 import { LatLng } from "./interfaces";
+import { GOOGLE_MAP_API } from "./constants";
 import mapStyles from "./mapStyles";
 import styles from "../scss/content.module.scss";
 //import Search from "antd/lib/transfer/search";
@@ -39,8 +41,7 @@ const libraries = ["places"];
 
 const Content = () => {
   const { isLoaded, loadError } = useLoadScript({
-    // googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    googleMapsApiKey: "AIzaSyDiGlZIqJ8qK4wflbqoE2KkUC9Jy1OlMrw",
+    googleMapsApiKey: GOOGLE_MAP_API,
     libraries,
   });
   const [markers, setMarkers] = useState<object[]>([]);
@@ -89,6 +90,7 @@ const Content = () => {
   return (
     <>
       <Search panTo={panTo} />
+      {/* <UserLocation panTo={panTo}/> */}
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
@@ -96,7 +98,9 @@ const Content = () => {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
+        
       >
+        <UserLocation panTo={panTo}/>
         {/* Child components, such as markers, info windows, etc. */}
         {markers.map((marker: any, index: number) => (
           <Marker

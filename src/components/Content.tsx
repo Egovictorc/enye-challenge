@@ -25,8 +25,7 @@ import styles from "../scss/content.module.scss";
 
 const Content = () => {
   return (
-    <Col span="18" className={styles.mapContainer}>
-      
+    <Col span="24" className={styles.mapContainer}>
       <Map />
     </Col>
   );

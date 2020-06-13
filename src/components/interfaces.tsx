@@ -12,5 +12,9 @@ export interface LatLng {
   
   export interface PanTo {
    panTo(lat: number,
-    lng: number,): any 
+    lng: number): any 
  }
+
+ export type GeoLocation = {
+    panTo({lat, lng}: LatLng): void
+  }

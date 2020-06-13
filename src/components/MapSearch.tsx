@@ -13,22 +13,20 @@ import usePlacesAutocomplete, {
   } from "@reach/combobox";
   import "@reach/combobox/styles.css";
   
-  import { LatLng, PanTo } from "./interfaces";
+  import { LatLng, PanTo, GeoLocation } from "./interfaces";
   import mapStyles from "./mapStyles";
   import styles from "../scss/content.module.scss";
   //import Search from "antd/lib/transfer/search";
   
-  
-  type searchProps = {
-    panTo({lat, lng}: LatLng): void
-  }
 
 
-const MapSearch = ({panTo}: searchProps) => {
+
+const MapSearch = ({panTo}: GeoLocation) => {
     const {
       ready,
       value,
       suggestions: { status, data },
+      clearSuggestions,
       setValue,
     } = usePlacesAutocomplete();
   
@@ -36,10 +34,10 @@ const MapSearch = ({panTo}: searchProps) => {
       setValue(e.target.value);
     };
   
-    const handleSelect = (val: string): void => {
-      setValue(val, false);
-      console.log("selected ", val);
-    };
+    // const handleSelect = (val: string): void => {
+    //   setValue(val, false);
+    //   console.log("selected ", val);
+    // };
   
     const renderSuggestions = (): JSX.Element => {
       const suggestions = data.map(({ id, description }: any) => (
@@ -71,11 +69,13 @@ const MapSearch = ({panTo}: searchProps) => {
         <p className={styles.subtitle}>Please enter the city or landmark name</p>
         <Combobox
           onSelect={async (address) => {
+              setValue(address, false);
+              clearSuggestions();
             try {
               const results = await getGeocode({ address });
               const { lat, lng } = await getLatLng(results[0]);
               panTo({lat, lng});
-              console.log(lat, lng);
+            //   console.log(lat, lng);
             } catch (error) {
               console.log("error!");
             }
